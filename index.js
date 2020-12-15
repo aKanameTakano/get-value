@@ -33,12 +33,12 @@ module.exports = function(target, path, options) {
     return isValid(path, target, options) ? target[path] : options.default;
   }
 
-  let segs = isArray ? path : split(path, splitChar, options);
-  let len = segs.length;
-  let idx = 0;
+  var segs = isArray ? path : split(path, splitChar, options);
+  var len = segs.length;
+  var idx = 0;
 
   do {
-    let prop = segs[idx];
+    var prop = segs[idx];
     if (typeof prop === 'number') {
       prop = String(prop);
     }
@@ -54,8 +54,8 @@ module.exports = function(target, path, options) {
 
       target = target[prop];
     } else {
-      let hasProp = false;
-      let n = idx + 1;
+      var hasProp = false;
+      var n = idx + 1;
 
       while (n < len) {
         prop = join([prop, segs[n++]], joinChar, options);
