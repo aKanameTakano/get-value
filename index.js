@@ -5,7 +5,7 @@
  * Released under the MIT License.
  */
 
-const isObject = require('isobject');
+var isObject = require('isobject');
 
 module.exports = function(target, path, options) {
   if (!isObject(options)) {
@@ -20,10 +20,10 @@ module.exports = function(target, path, options) {
     path = String(path);
   }
 
-  const isArray = Array.isArray(path);
-  const isString = typeof path === 'string';
-  const splitChar = options.separator || '.';
-  const joinChar = options.joinChar || (typeof splitChar === 'string' ? splitChar : '.');
+  var isArray = Array.isArray(path);
+  var isString = typeof path === 'string';
+  var splitChar = options.separator || '.';
+  var joinChar = options.joinChar || (typeof splitChar === 'string' ? splitChar : '.');
 
   if (!isString && !isArray) {
     return target;
